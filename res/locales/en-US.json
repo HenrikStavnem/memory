@@ -1,0 +1,22 @@
+{
+    "app": {
+        "title": "Memory"
+    },
+	"dialogs": {
+		"start": {
+			"headline": "Click, listen and find the matching pairs.",
+			"bodyText": "",
+			"btnText": "Start"
+		},
+		"help": {
+			"headline": "Memory",
+			"bodyText": "Find the matching pairs.\n\nPick a card and listen to how the word on it is pronounced.\n\nThe stop watch shows how much time you spend. Your time will not be saved.",
+			"btnText": "Close"
+		},
+		"win": {
+			"headline": "Well done!",
+			"bodyText": "Your time: {{time}}",
+			"btnText": "Play again"
+		}
+	}
+}
