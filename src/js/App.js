@@ -82,7 +82,7 @@ class App extends React.Component {
 	restartGame() {
 		var me = this;
 
-		me.state = {
+		me.setState({
 			matches:				0,
 			revealedCardOne:		null,
 			revealedCardTwo:		null,
@@ -90,11 +90,11 @@ class App extends React.Component {
 			timePassed:				0,
 			isGameWon:				false,
 			cards: []
-        };
+		});
 
 		setTimeout(function() {
 			me.createBoard();
-		}, 500);
+		}, 100);
 	}
 
 	handler(card) {
@@ -195,15 +195,16 @@ class App extends React.Component {
 
 	createBoard() {
 		var boardSize = cardsToCreate.length,
-		result = new Array();
+			cards = [...cardsToCreate],
+			result = new Array();
 
 		for (var i = 0; i < boardSize; i++) {
-			var index = Math.floor(Math.random() * cardsToCreate.length),
-				tile = cardsToCreate[index];
+			var index = Math.floor(Math.random() * cards.length),
+				tile = cards[index];
 
 			result.push(tile);
 
-			cardsToCreate.splice(index, 1);
+			cards.splice(index, 1);
 		}
 
 		this.setState({
